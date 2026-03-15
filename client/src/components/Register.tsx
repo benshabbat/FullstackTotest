@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import {
-  registerRequest,
   type RegisterFormData,
 } from "../services/authServices";
+import { useAuthStore } from "../store/useAuthStore";
 
 export default function Register() {
   const [formData, setFormData] = useState<RegisterFormData>({
@@ -10,12 +10,14 @@ export default function Register() {
     password: "",
     fullName: "",
   });
+  const { user, register } = useAuthStore();
 
-  
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    console.log(await registerRequest(formData));
+    await register(formData);
+
+    console.log(user && user);
   }
 
   function handleChange(

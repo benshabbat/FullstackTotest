@@ -1,17 +1,18 @@
 import React, { useState } from "react";
-import { loginRequest } from "../services/authServices";
+import { useAuthStore } from "../store/useAuthStore";
 
 export default function Login() {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
-
+  const { user, login } = useAuthStore();
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    await login(formData);
 
-    console.log(await loginRequest(formData));
+    console.log(user && user);
   }
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
