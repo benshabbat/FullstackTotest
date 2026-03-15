@@ -1,4 +1,5 @@
-import { apiRequestGet } from "./authServices";
+import { apiRequestGet } from "./utilsApi";
+
 
 
 
@@ -10,3 +11,4 @@ export const getUsersRequest = async () => await apiRequestGet(`${API_BASE_URL}`
 
 
 
+    

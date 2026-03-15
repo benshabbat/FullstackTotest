@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import {
-  type RegisterFormData,
-} from "../services/authServices";
 import { useAuthStore } from "../store/useAuthStore";
+import type { RegisterFormData } from "../api/authApi";
 
 export default function Register() {
   const [formData, setFormData] = useState<RegisterFormData>({

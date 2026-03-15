@@ -1,10 +1,8 @@
 import { create } from "zustand";
-import {
-  type RegisterFormData,
-  type User,
-} from "../services/authServices";
+
 import { persist } from "zustand/middleware";
-import { getUsersRequest } from "../services/usersSevices";
+import { getUsersRequest } from "../api/usersApi";
+import type { RegisterFormData, User } from "../api/authApi";
 
 interface UsersState {
   users: User[] | [];

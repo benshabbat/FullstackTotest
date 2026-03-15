@@ -1,12 +1,6 @@
 import { create } from "zustand";
-import {
-  loginRequest,
-  registerRequest,
-  type FormData,
-  type RegisterFormData,
-  type User,
-} from "../services/authServices";
 import { persist } from "zustand/middleware";
+import { loginRequest, registerRequest, type FormData, type RegisterFormData, type User } from "../api/authApi";
 
 interface AuthState {
   user: User | null;
@@ -18,7 +12,7 @@ export const useAuthStore = create<AuthState>()(
   persist(
     (set) => ({
       user: null,
-      login: async (formData: FormData) => {
+      login: async (formData: FormData )=> {
         const { user } = await loginRequest(formData);
         set({ user });
         return user;
