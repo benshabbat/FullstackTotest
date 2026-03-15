@@ -11,14 +11,11 @@ export default function Register() {
     fullName: "",
   });
 
-  //service for fetching data from backend and saving in zustand store (create file in folder services and create function for fetching data from backend and saving in zustand store)
-  //logic for handling form submission and fetching data from backend and saving in zustand store
-
+  
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     console.log(await registerRequest(formData));
-    //logic for handling form submission
   }
 
   function handleChange(
