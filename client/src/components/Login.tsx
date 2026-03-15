@@ -7,8 +7,6 @@ export default function Login() {
     password: "",
   });
 
-  //logic for handling form with handleSubmit and useState for form data
-  //logic for handling form with handleChange and useState for form data
   //service for fetching data from backend and saving in zustand store (create file in folder services and create function for fetching data from backend and saving in zustand store)
   //logic for handling form submission and fetching data from backend and saving in zustand store
 
