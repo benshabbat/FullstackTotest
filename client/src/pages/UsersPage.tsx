@@ -2,12 +2,11 @@ import { useEffect } from "react";
 import { useUsersStore } from "../store/useUsersStore";
 
 function UsersPage() {
+  const { users, getUsers } = useUsersStore();
 
-    const { users, getUsers } = useUsersStore();
-
-        useEffect(() => {
-            getUsers();
-        }, [])
+  useEffect(() => {
+    getUsers();
+  }, []);
   return (
     <div>
       {users.map((user) => (
@@ -17,9 +16,8 @@ function UsersPage() {
           <p>{user.role}</p>
         </div>
       ))}
-
     </div>
-  )
+  );
 }
 
-export default UsersPage
+export default UsersPage;
